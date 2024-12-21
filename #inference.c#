@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+#include <stdio.h>
+
+int main() {
+    FILE *file;
+    double weight;
+    double weights[50000];
+
+    // Open the file for reading
+    file = fopen("weights.txt", "r");
+
+    // Check if the file is opened successfully
+    if (file == NULL) {
+        printf("Error opening the file.\n");
+        return 1;  // Return an error code
+    }
+
+    // Read weights from the file until the end is reached
+    while (fscanf(file, "%lf", &weight) == 1) {
+      
+    }
+
+    // Close the file
+    fclose(file);
+
+    return 0;  // Return success
+}
+
+double inference(double x[MAX_DICTIONARY_SIZE]) {
+    double sum = 0;
+    for (int i = 0; i < MAX_DICTIONARY_SIZE; i++) {
+        sum += w[i] * x[i];
+    }
+    return tanh(sum);
+}

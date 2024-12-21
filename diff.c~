@@ -1,0 +1,13 @@
+
+double gradient  f   (double (*func)(double *x),double *w,int size){
+  double *diff = malloc(sizeof(double)*size);
+  for(int i = 0;i < size;i++){
+    w[i] += 0.000001;
+    double sumy = func(w);
+    w[i] -= 0.000001;
+    double y = func(w);
+    double ydiff = sumy - y;
+    diff[i] = (double)(ydiff / 0.000001);
+  }
+  
+}
